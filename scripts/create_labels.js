@@ -2,7 +2,7 @@
 // Usage: GITHUB_TOKEN=xxx node create_labels.js <repo-name> [org]
 const TOKEN = process.env.GITHUB_TOKEN;
 const repo = process.argv[2];
-const ORG = process.argv[3] || 'Value-intelligence-trust';
+const ORG = process.argv[3] || 'vitnetwork';
 const HEADERS = { Authorization: `token ${TOKEN}`, 'User-Agent': 'vit-devops-labels', Accept: 'application/vnd.github+json' };
 
 const LABELS = [
@@ -22,3 +22,4 @@ const LABELS = [
     console.log(`${label.name}: ${res.status === 201 ? 'created' : res.status === 422 ? 'exists' : 'fail ' + res.status}`);
   }
 })();
+
